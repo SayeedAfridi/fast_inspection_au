@@ -1,3 +1,4 @@
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:stacked/stacked.dart';
 import 'package:fast_inspection/app/app.locator.dart';
 import 'package:fast_inspection/app/app.router.dart';
@@ -8,6 +9,7 @@ class StartupViewModel extends BaseViewModel {
 
   // Place anything here that needs to happen before we get into the application
   Future runStartupLogic() async {
+    FlutterNativeSplash.remove();
     await Future.delayed(const Duration(seconds: 3));
 
     // This is where you can make decisions on where your app should navigate when
