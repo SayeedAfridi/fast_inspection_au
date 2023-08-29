@@ -1,4 +1,4 @@
-package com.example.fast_inspection
+package dev.sayeed.fastinspection
 
 import io.flutter.embedding.android.FlutterActivity
 
