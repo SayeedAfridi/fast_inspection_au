@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:fast_inspection/ui/common/app_colors.dart';
 import 'package:fast_inspection/ui/common/ui_helpers.dart';
 
 import 'home_viewmodel.dart';
