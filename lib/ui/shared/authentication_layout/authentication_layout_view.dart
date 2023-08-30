@@ -41,9 +41,12 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/icons/logo_512.png',
-              height: 48,
+            Hero(
+              tag: 'logo',
+              child: Image.asset(
+                'assets/icons/logo_512.png',
+                height: 48,
+              ),
             ),
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,

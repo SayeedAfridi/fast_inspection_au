@@ -21,9 +21,12 @@ class StartupView extends StackedView<StartupViewModel> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             verticalSpaceLarge,
-            Image.asset(
-              'assets/icons/logo_512.png',
-              height: 200,
+            Hero(
+              tag: 'logo',
+              child: Image.asset(
+                'assets/icons/logo_512.png',
+                height: 200,
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 50),
