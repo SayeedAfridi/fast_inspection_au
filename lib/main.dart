@@ -24,12 +24,14 @@ class MainApp extends StatelessWidget {
       onGenerateRoute: StackedRouter().onGenerateRoute,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      darkTheme: ThemeData.dark().copyWith(
-        primaryColor: Colors.purple,
+      darkTheme: ThemeData(
+        primarySwatch: Colors.purple,
         useMaterial3: true,
+        brightness: Brightness.dark,
       ),
-      theme: ThemeData.light().copyWith(
-        primaryColor: Colors.purple,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        brightness: Brightness.light,
         useMaterial3: true,
       ),
       navigatorKey: StackedService.navigatorKey,

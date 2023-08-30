@@ -15,7 +15,7 @@ dependencies:
   flutter_native_splash: ^2.3.2
   logger: ^1.4.0
   stacked: ^3.4.0
-  stacked_firebase_auth: ^2.19.4
+  # stacked_firebase_auth: ^2.19.4
   stacked_services: ^1.1.0
 
 dev_dependencies:
