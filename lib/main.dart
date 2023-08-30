@@ -1,3 +1,5 @@
+import 'package:fast_inspection/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_inspection/app/app.locator.dart';
 import 'package:fast_inspection/app/app.router.dart';
@@ -7,6 +9,7 @@ import 'package:stacked_services/stacked_services.dart';
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setupLocator();
   runApp(const MainApp());
 }

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "898274107653",
+    "project_id": "fast-inspection-au",
+    "storage_bucket": "fast-inspection-au.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898274107653:android:8f5c4f65cbe7611b52176c",
+        "android_client_info": {
+          "package_name": "dev.sayeed.fastinspection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898274107653-v2mjqgpu2tt7ulrn6nmnohka9rmlpd36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOOEVXdvSyG2yupCRJcPR8Ijrffxc-Y08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898274107653-v2mjqgpu2tt7ulrn6nmnohka9rmlpd36.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898274107653-0g9e4d5dkfseft2v5dod7j85eo5uus2o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.sayeed.fastinspection"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
