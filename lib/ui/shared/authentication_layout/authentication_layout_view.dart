@@ -38,8 +38,9 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
   ) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Hero(
               tag: 'logo',
@@ -84,14 +85,14 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
                   fontSize: 12,
                 ),
               ),
-              verticalSpaceSmall,
+              verticalSpaceMedium,
               ...form,
               if (onForgotPasswordTap != null)
                 Align(
                   alignment: Alignment.topRight,
                   child: TextButton(
                     onPressed: onForgotPasswordTap,
-                    child: Text('Forgot Password?'),
+                    child: const Text('Forgot Password?'),
                   ),
                 ),
               verticalSpaceMedium,

@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '898274107653',
     projectId: 'fast-inspection-au',
     storageBucket: 'fast-inspection-au.appspot.com',
-    iosClientId: '898274107653-0g9e4d5dkfseft2v5dod7j85eo5uus2o.apps.googleusercontent.com',
+    iosClientId:
+        '898274107653-0g9e4d5dkfseft2v5dod7j85eo5uus2o.apps.googleusercontent.com',
     iosBundleId: 'dev.sayeed.fastinspection',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '898274107653',
     projectId: 'fast-inspection-au',
     storageBucket: 'fast-inspection-au.appspot.com',
-    iosClientId: '898274107653-3r60h0nan3cq9ehkmi3st4stqd920kgi.apps.googleusercontent.com',
+    iosClientId:
+        '898274107653-3r60h0nan3cq9ehkmi3st4stqd920kgi.apps.googleusercontent.com',
     iosBundleId: 'dev.sayeed.fastinspection.RunnerTests',
   );
 }

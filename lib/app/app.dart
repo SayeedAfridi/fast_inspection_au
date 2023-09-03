@@ -3,6 +3,9 @@ import 'package:fast_inspection/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:fast_inspection/ui/views/signin/signin_view.dart';
+import 'package:fast_inspection/ui/views/signup/signup_view.dart';
+import 'package:fast_inspection/ui/views/forgot_password/forgot_password_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -12,7 +15,10 @@ import 'package:stacked_services/stacked_services.dart';
       page: StartupView,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
-    // @stacked-route
+    MaterialRoute(page: SigninView),
+    MaterialRoute(page: SignupView),
+    MaterialRoute(page: ForgotPasswordView),
+// @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
