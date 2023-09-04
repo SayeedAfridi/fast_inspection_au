@@ -31,6 +31,7 @@ class SignupView extends StackedView<SignupViewModel> {
         AppTextField(
           hintText: 'Enter email',
           prefixIcon: Icon(Icons.email),
+          keyboardType: TextInputType.emailAddress,
         ),
         verticalSpaceMedium,
         AppTextField(

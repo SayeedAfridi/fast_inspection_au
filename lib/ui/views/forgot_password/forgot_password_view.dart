@@ -25,6 +25,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
         AppTextField(
           hintText: 'Enter your email',
           prefixIcon: Icon(Icons.email),
+          keyboardType: TextInputType.emailAddress,
         )
       ],
     );

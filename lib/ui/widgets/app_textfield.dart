@@ -5,6 +5,7 @@ class AppTextField extends StatefulWidget {
   final String? hintText;
   final Widget? prefixIcon;
   final bool isPassword;
+  final TextInputType? keyboardType;
 
   const AppTextField({
     super.key,
@@ -12,6 +13,7 @@ class AppTextField extends StatefulWidget {
     this.hintText,
     this.prefixIcon,
     this.isPassword = false,
+    this.keyboardType,
   });
 
   @override
@@ -24,7 +26,7 @@ class _AppTextFieldState extends State<AppTextField> {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.isPassword
             ? GestureDetector(
@@ -39,6 +41,7 @@ class _AppTextFieldState extends State<AppTextField> {
         hintText: widget.hintText,
       ),
       obscureText: widget.isPassword && !showPass,
+      keyboardType: widget.keyboardType,
     );
   }
 }
