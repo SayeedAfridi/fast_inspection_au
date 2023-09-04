@@ -21,6 +21,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
       signupText: 'Remember your password? Sign in.',
       onSignupTap: viewModel.goToSignin,
       onMainButtonTap: viewModel.sendResetPasswordMail,
+      busy: viewModel.isBusy,
       form: const [
         AppTextField(
           hintText: 'Enter your email',

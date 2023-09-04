@@ -1,10 +1,7 @@
 import 'package:fast_inspection/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
 
-import 'authentication_layout_viewmodel.dart';
-
-class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
+class AuthenticationLayoutView extends StatelessWidget {
   final String title;
   final String subtitle;
   final String mainButtonTitle;
@@ -31,11 +28,7 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
   }) : super(key: key);
 
   @override
-  Widget builder(
-    BuildContext context,
-    AuthenticationViewModel viewModel,
-    Widget? child,
-  ) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -87,6 +80,15 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
                 ),
               ),
               verticalSpaceMedium,
+              if (validationMessage != null)
+                Text(
+                  validationMessage!,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+              if (validationMessage != null) verticalSpaceSmall,
               ...form,
               if (onForgotPasswordTap != null)
                 Align(
@@ -99,7 +101,14 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
               verticalSpaceMedium,
               FilledButton(
                 onPressed: onMainButtonTap,
-                child: Text(mainButtonTitle),
+                child: busy
+                    ? SizedBox(
+                        height: 24,
+                        width: 24,
+                        child: CircularProgressIndicator(
+                            color: Colors.purple.shade400),
+                      )
+                    : Text(mainButtonTitle),
               ),
               verticalSpaceSmall,
               TextButton(onPressed: onSignupTap, child: Text(signupText))
@@ -109,10 +118,4 @@ class AuthenticationLayoutView extends StackedView<AuthenticationViewModel> {
       ),
     );
   }
-
-  @override
-  AuthenticationViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      AuthenticationViewModel();
 }

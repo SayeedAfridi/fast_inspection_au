@@ -18,9 +18,9 @@ import 'package:fast_inspection/ui/views/forgot_password/forgot_password_view.da
       page: StartupView,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
-    MaterialRoute(page: SigninView),
-    MaterialRoute(page: SignupView),
-    MaterialRoute(page: ForgotPasswordView),
+    CustomRoute(page: SigninView),
+    CupertinoRoute(page: SignupView),
+    CupertinoRoute(page: ForgotPasswordView),
 // @stacked-route
   ],
   dependencies: [

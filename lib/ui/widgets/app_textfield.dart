@@ -42,6 +42,7 @@ class _AppTextFieldState extends State<AppTextField> {
       ),
       obscureText: widget.isPassword && !showPass,
       keyboardType: widget.keyboardType,
+      controller: widget.controller,
     );
   }
 }

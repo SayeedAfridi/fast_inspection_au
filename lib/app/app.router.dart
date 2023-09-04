@@ -11,10 +11,11 @@ import 'package:fast_inspection/ui/views/home/home_view.dart' as _i2;
 import 'package:fast_inspection/ui/views/signin/signin_view.dart' as _i4;
 import 'package:fast_inspection/ui/views/signup/signup_view.dart' as _i5;
 import 'package:fast_inspection/ui/views/startup/startup_view.dart' as _i3;
+import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i8;
+import 'package:stacked_services/stacked_services.dart' as _i9;
 
 class Routes {
   static const homeView = '/home-view';
@@ -81,19 +82,24 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i4.SigninView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.SigninView(),
+      return _i7.PageRouteBuilder<dynamic>(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const _i4.SigninView(),
         settings: data,
+        transitionsBuilder: data.transition ??
+            (context, animation, secondaryAnimation, child) {
+              return child;
+            },
       );
     },
     _i5.SignupView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i8.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i5.SignupView(),
         settings: data,
       );
     },
     _i6.ForgotPasswordView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i8.CupertinoPageRoute<dynamic>(
         builder: (context) => const _i6.ForgotPasswordView(),
         settings: data,
       );
@@ -106,7 +112,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i8.NavigationService {
+extension NavigatorStateExtension on _i9.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,

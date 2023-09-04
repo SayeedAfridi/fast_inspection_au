@@ -1,12 +1,19 @@
 import 'package:fast_inspection/ui/common/ui_helpers.dart';
 import 'package:fast_inspection/ui/shared/authentication_layout/authentication_layout_view.dart';
+import 'package:fast_inspection/ui/views/signup/signup_view.form.dart';
 import 'package:fast_inspection/ui/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
 import 'signup_viewmodel.dart';
 
-class SignupView extends StackedView<SignupViewModel> {
+@FormView(fields: [
+  FormTextField(name: 'fullName'),
+  FormTextField(name: 'email'),
+  FormTextField(name: 'password'),
+])
+class SignupView extends StackedView<SignupViewModel> with $SignupView {
   const SignupView({Key? key}) : super(key: key);
 
   @override
@@ -21,23 +28,28 @@ class SignupView extends StackedView<SignupViewModel> {
       mainButtonTitle: 'Sign up',
       signupText: 'Already have an account? Sign in.',
       onSignupTap: viewModel.goToSignin,
-      onMainButtonTap: viewModel.signup,
-      form: const [
+      onMainButtonTap: viewModel.saveData,
+      busy: viewModel.isBusy,
+      validationMessage: viewModel.validationMessage,
+      form: [
         AppTextField(
           hintText: 'Enter full name',
-          prefixIcon: Icon(Icons.person),
+          prefixIcon: const Icon(Icons.person),
+          controller: fullNameController,
         ),
         verticalSpaceMedium,
         AppTextField(
           hintText: 'Enter email',
-          prefixIcon: Icon(Icons.email),
+          prefixIcon: const Icon(Icons.email),
           keyboardType: TextInputType.emailAddress,
+          controller: emailController,
         ),
         verticalSpaceMedium,
         AppTextField(
           hintText: 'Enter password',
-          prefixIcon: Icon(Icons.lock),
+          prefixIcon: const Icon(Icons.lock),
           isPassword: true,
+          controller: passwordController,
         ),
       ],
     );
@@ -48,4 +60,16 @@ class SignupView extends StackedView<SignupViewModel> {
     BuildContext context,
   ) =>
       SignupViewModel();
+
+  @override
+  void onViewModelReady(SignupViewModel viewModel) {
+    syncFormWithViewModel(viewModel);
+    super.onViewModelReady(viewModel);
+  }
+
+  @override
+  void onDispose(SignupViewModel viewModel) {
+    super.onDispose(viewModel);
+    disposeForm();
+  }
 }

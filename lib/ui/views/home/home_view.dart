@@ -12,7 +12,13 @@ class HomeView extends StackedView<HomeViewModel> {
     HomeViewModel viewModel,
     Widget? child,
   ) {
-    return const Placeholder();
+    return const Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Text('hello there!'),
+        ),
+      ),
+    );
   }
 
   @override
