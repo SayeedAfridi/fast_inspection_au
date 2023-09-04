@@ -1,4 +1,5 @@
 import 'package:fast_inspection/firebase_options.dart';
+import 'package:fast_inspection/ui/common/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_inspection/app/app.locator.dart';
@@ -24,16 +25,8 @@ class MainApp extends StatelessWidget {
       onGenerateRoute: StackedRouter().onGenerateRoute,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      darkTheme: ThemeData(
-        primarySwatch: Colors.purple,
-        useMaterial3: true,
-        brightness: Brightness.dark,
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        brightness: Brightness.light,
-        useMaterial3: true,
-      ),
+      darkTheme: AppTheme.dark,
+      theme: AppTheme.light,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
         StackedService.routeObserver,
