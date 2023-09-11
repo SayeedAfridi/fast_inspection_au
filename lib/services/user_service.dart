@@ -10,7 +10,8 @@ class UserService {
   final _authServie = locator<stk_auth.FirebaseAuthenticationService>();
 
   User? _currentUser;
-  User get currentUser => _currentUser!;
+  User? get currentUser => _currentUser;
+  bool get hasUser => _authServie.hasUser;
 
   Future<void> syncUserAccount() async {
     final firebaseUserId = _authServie.firebaseAuth.currentUser!.uid;
